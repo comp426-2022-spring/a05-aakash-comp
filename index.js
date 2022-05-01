@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }))
 
 const morgan = require('morgan')
 
-const logdb = require('.src/services/database')
+const logdb = require('.src/services/database.js')
 
 const fs = require("fs")
 
@@ -122,7 +122,8 @@ app.get('/app/flips/:number', (req, res) => {
 
 app.post('/app/flips/coins', (req, res, next) => {
     result = coinFlips(req.params.number)
-    res.status(200).json({"raw": result, "summary" : countFlips(result)})
+    show = {"raw": result, "summary" : countFlips(result)}
+    res.status(200).json(show)
 })
 
 app.get('/app/flip/call/:guess(heads|tails)/', (req, res) => {
