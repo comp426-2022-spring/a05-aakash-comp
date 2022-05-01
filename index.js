@@ -45,6 +45,8 @@ const server = app.listen(port, () => {
     console.log('App listening on port %PORT%'.replace('%PORT%', port))
 });
 
+app.use(express.static('./public'));
+
 //a04 starts here
 
 if (args.help || args.h) {
