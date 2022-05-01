@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }))
 
 const morgan = require('morgan')
 
-const logdb = require('.src/services/database.js')
+const logdb = require('./src/services/database.js')
 
 const fs = require("fs")
 
